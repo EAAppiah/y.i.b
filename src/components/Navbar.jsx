@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { FaPhoneVolume } from "react-icons/fa6";
 
@@ -27,15 +28,16 @@ const Navbar = () => {
 				isScrolled ? "bg-white shadow-md" : "bg-transparent"
 			}`}
 		>
-			<div className="container mx-auto px-6 py-8 ">
+			<div className="container mx-auto px-6 py-4">
 				<div className="flex justify-between items-center">
-					<Link
-						href="/"
-						className={`text-2xl font-bold transition-colors duration-300 ${
-							isScrolled ? "text-primary" : "text-white"
-						}`}
-					>
-						GoldFern
+					<Link href="/" className="flex items-center">
+						<Image
+							src="/images/yib.png"
+							alt="Youth in Business logo"
+							width={120}
+							height={100}
+							className="mr-2"
+						/>
 					</Link>
 
 					{/* Desktop Menu */}
@@ -63,21 +65,20 @@ const Navbar = () => {
 						))}
 					</ul>
 
-					<a
-						href="tel:123-489-9381"
-						className="hidden sm:flex items-center group"
-					>
-						<span className="bg-[#FC6B00] p-2 rounded-full opacity-70 mr-2 group-hover:opacity-100 transition-opacity duration-300">
-							<FaPhoneVolume className="text-white" />
-						</span>
-						<span
-							className={`${
-								isScrolled ? "text-gray-800" : "text-white"
-							} text-lg font-medium transition-colors duration-300`}
-						>
-							123-489-9381
-						</span>
-					</a>
+					<div className="hidden lg:flex items-center">
+						<a href="tel:123-489-9381" className="flex items-center group">
+							<span className="bg-secondary p-2 rounded-full mr-2 group-hover:opacity-70 transition-opacity duration-300">
+								<FaPhoneVolume className="text-white" />
+							</span>
+							<span
+								className={`${
+									isScrolled ? "text-gray-800" : "text-white"
+								} text-lg font-medium transition-colors duration-300`}
+							>
+								123-489-9381
+							</span>
+						</a>
+					</div>
 
 					{/* Mobile menu button */}
 					<button

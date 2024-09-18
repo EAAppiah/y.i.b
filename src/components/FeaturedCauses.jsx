@@ -110,15 +110,15 @@ const FeaturedCauses = () => {
 					<span className="inline-block text-xs sm:text-sm md:text-base text-orange-500 font-semibold tracking-wide uppercase bg-[#da9a6d] bg-opacity-20 mb-2 sm:mb-3 py-1 sm:py-2 px-2 sm:px-4 rounded-full">
 						Causes
 					</span>
-					<h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mt-2 mb-3 sm:mb-4 text-primary">
+					<h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mt-2 mb-3 md:mb-4 text-primary">
 						Featured Causes
 					</h2>
-					<p className="text-gray-600 max-w-2xl mx-auto text-sm sm:text-base">
+					<p className="text-gray-600 max-w-2xl mx-auto md:text-sm text-base">
 						Join us in making a difference. Your support can change lives and
 						create lasting impact in communities around the world.
 					</p>
 
-					<div className="py-4 sm:py-5 flex justify-center space-x-2 sm:space-x-4">
+					<div className="py-10 flex justify-center space-x-2 sm:space-x-4">
 						<button
 							className="outline outline-offset-2 outline-1 outline-gray-300 hover:outline-offset-2 text-black uppercase px-2 sm:px-4 py-1 sm:py-2 rounded-full flex items-center hover:outline-black transition duration-300 text-xs sm:text-sm"
 							onClick={() => swiperRef.current?.slidePrev()}
