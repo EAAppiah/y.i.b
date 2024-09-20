@@ -239,7 +239,7 @@ const Footer = () => {
 					</p>
 				</div>
 			</div>
-			<div class="h-[100px]"></div>
+			<div className="h-[100px]"></div>
 		</footer>
 	);
 };
