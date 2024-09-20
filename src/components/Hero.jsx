@@ -1,18 +1,16 @@
 "use client";
 import { useState, useEffect } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
 
 const Hero = () => {
 	const [isClient, setIsClient] = useState(false);
 
-	useEffect(() => {
-		setIsClient(true);
-		AOS.init({
-			duration: 1000,
-			once: true,
-		});
-	}, []);
+	// useEffect(() => {
+	// 	setIsClient(true);
+	// 	AOS.init({
+	// 		duration: 1000,
+	// 		once: true,
+	// 	});
+	// }, []);
 
 	const donationAmounts = [10, 25, 50, 100];
 
