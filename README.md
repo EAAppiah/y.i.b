@@ -1,10 +1,7 @@
-Here's the corrected version of your project description:
-
----
 
 # Youth In Business ✨
-https://imgur.com/UGEcivl
-[![Y.I.B Screenshot](https://imgur.com/UGEcivl.png "Fredox Homepage")](https://yib.vercel.app/)
+
+[![Y.I.B Screenshot](https://imgur.com/UGEcivl.png "YIB Homepage")](https://yib.vercel.app/)
 
 [![Next.js](https://img.shields.io/badge/Next.js-14-brightgreen)](https://nextjs.org/) [![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-3.4.3-blue)](https://tailwindcss.com/)
 
