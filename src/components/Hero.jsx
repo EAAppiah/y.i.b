@@ -1,6 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
-import Image from "next/Image";
+import Image from "next/image";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -17,10 +17,14 @@ const Hero = () => {
 	return (
 		<section className="relative min-h-screen overflow-hidden bg-gradient-to-br from-blue-900 to-purple-900 py-16 md:py-20">
 			<div className="absolute inset-0 z-0">
-				<img
+				<Image
 					src="/images/group.jpg"
 					alt="Hero Background"
-					className="object-cover w-full h-full opacity-50"
+					layout="fill"
+					objectFit="cover"
+					quality={100}
+					priority
+					className="opacity-50"
 				/>
 			</div>
 
