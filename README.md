@@ -36,9 +36,5 @@ Once the development server is running, you can access Y.I.B by navigating to `h
 
 Contributions are welcome! If you find any issues or have suggestions for improvements, please feel free to open an issue or submit a pull request.
 
-## 📄 License
-
-This project is licensed under the [MIT License](LICENSE).
-
 ---
 😊
