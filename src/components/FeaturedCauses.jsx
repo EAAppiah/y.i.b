@@ -7,7 +7,11 @@ import "swiper/css";
 import "swiper/css/navigation";
 
 const CauseItem = ({ image, title, description, progress, raised, goal }) => (
-	<div className="bg-white rounded-lg shadow-md overflow-hidden h-full">
+	<div
+		className="bg-white rounded-lg shadow-md overflow-hidden h-full"
+		data-aos="fade-up"
+		data-aos-delay="300"
+	>
 		<Image
 			src={image}
 			alt={title}

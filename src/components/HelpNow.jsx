@@ -14,10 +14,18 @@ const HelpNow = () => {
 					<h2 className="py-2 inline-block text-white font-semibold tracking-wide uppercase bg-white shadow-xl bg-opacity-20 mb-3 px-4 rounded-full">
 						Help Now
 					</h2>
-					<p className="text-xl md:text-2xl lg:text-6xl font-bold text-white mb-10">
+					<p
+						className="text-xl md:text-2xl lg:text-5xl font-bold text-white mb-10"
+						data-aos="fade-up"
+						data-aos-delay="300"
+					>
 						Let's Help The Unfortunate People
 					</p>
-					<div className="flex flex-col sm:flex-row justify-center gap-4">
+					<div
+						className="flex flex-col sm:flex-row justify-center gap-4"
+						data-aos="fade-up"
+						data-aos-delay="500"
+					>
 						<button className="cursor-pointer outline outline-offset-2 outline-1 outline-white hover:text-black hover:bg-white text-white uppercase font-semibold py-3 px-6 rounded-full transition duration-300 text-center">
 							Become a Volunteer
 						</button>

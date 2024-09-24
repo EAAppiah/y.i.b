@@ -1,6 +1,8 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const TabContent = ({
 	title,
@@ -46,6 +48,12 @@ const TabContent = ({
 );
 
 const AboutUs = () => {
+	useEffect(() => {
+		AOS.init({
+			duration: 1000,
+			once: true,
+		});
+	}, []);
 	const [activeTab, setActiveTab] = useState("mission");
 
 	const tabs = [
@@ -130,9 +138,11 @@ const AboutUs = () => {
 							<TabContent {...tabContents[activeTab]} />
 						</div>
 					</div>
-					<div className="lg:w-6/12" data-aos="fade-up" data-aos-delay="300">
+					<div className="lg:w-6/12">
 						<div className="relative">
 							<Image
+								data-aos="fade-up"
+								data-aos-delay="300"
 								src="/images/second.jpeg"
 								alt="Our work in action"
 								width={600}
@@ -140,6 +150,8 @@ const AboutUs = () => {
 								className="rounded-lg shadow-lg transition-transform duration-300 hover:scale-105"
 							/>
 							<Image
+								data-aos="fade-up"
+								data-aos-delay="500"
 								src="/images/third.jpeg"
 								alt="Making a difference"
 								width={300}

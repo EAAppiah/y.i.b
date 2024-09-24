@@ -1,16 +1,16 @@
 "use client";
 import { useState, useEffect } from "react";
+import Image from "next/Image";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Hero = () => {
-	const [isClient, setIsClient] = useState(false);
-
-	// useEffect(() => {
-	// 	setIsClient(true);
-	// 	AOS.init({
-	// 		duration: 1000,
-	// 		once: true,
-	// 	});
-	// }, []);
+	useEffect(() => {
+		AOS.init({
+			duration: 1000,
+			once: true,
+		});
+	}, []);
 
 	const donationAmounts = [10, 25, 50, 100];
 
@@ -18,9 +18,9 @@ const Hero = () => {
 		<section className="relative min-h-screen overflow-hidden bg-gradient-to-br from-blue-900 to-purple-900 py-16 md:py-20">
 			<div className="absolute inset-0 z-0">
 				<img
-					src="/images/hero-background.jpg"
+					src="/images/group.jpg"
 					alt="Hero Background"
-					className="object-cover w-full h-full opacity-20"
+					className="object-cover w-full h-full opacity-50"
 				/>
 			</div>
 
@@ -50,7 +50,7 @@ const Hero = () => {
 						</p>
 						<div
 							data-aos="fade-right"
-							data-aos-delay="300"
+							data-aos-delay="200"
 							className="mt-8 space-y-4 md:space-y-0 md:space-x-4 flex flex-col md:flex-row justify-center lg:justify-start"
 						>
 							<a

@@ -21,7 +21,10 @@ const InstagramSection = () => {
 	return (
 		<section className="pt-20">
 			<div className="container mx-auto px-4 mb-12">
-				<div className="flex flex-col lg:flex-row items-center lg:items-start -mx-4">
+				<div
+					className="flex flex-col lg:flex-row items-center lg:items-start -mx-4"
+					data-aos="fade-left"
+				>
 					<div className="w-full lg:w-1/3 px-4 mb-8 lg:mb-0">
 						<span className="inline-block text-sm md:text-base text-orange-500 font-semibold tracking-wide uppercase bg-[#da9a6d] bg-opacity-20 mb-3 py-2 px-2 sm:px-4 rounded-full">
 							Instagram
@@ -40,7 +43,7 @@ const InstagramSection = () => {
 				</div>
 			</div>
 
-			<div>
+			<div data-aos="fade-up" data-aos-delay="300">
 				<Swiper
 					slidesPerView={1}
 					spaceBetween={5}

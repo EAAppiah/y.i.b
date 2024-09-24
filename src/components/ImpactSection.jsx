@@ -1,12 +1,14 @@
 "use client";
-
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import {
 	MdOutlineVolunteerActivism,
 	MdOutlineCampaign,
 	MdAttachMoney,
 	MdGroups,
 } from "react-icons/md";
+import { CountUp } from "countup.js";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const CounterItem = ({
 	Icon,
@@ -15,32 +17,53 @@ const CounterItem = ({
 	prefix = "",
 	suffix = "",
 	className = "",
-}) => (
-	<div
-		className={`bg-white rounded-lg shadow-lg p-10 transition-transform hover:scale-105 mb-3 ${className}`}
-	>
-		<Icon className="text-secondary text-5xl mb-4" />
-		<span className="text-[#59886b] text-3xl lg:text-4xl font-bold">
-			{prefix}
-			<span className="countup">{number.toLocaleString()}</span>
-			{suffix}
-		</span>
-		<span className="block text-gray-600 mt-2">{label}</span>
-	</div>
-);
+}) => {
+	const countUpRef = useRef(null);
+	const countUpInstance = useRef(null);
+
+	useEffect(() => {
+		if (countUpRef.current) {
+			countUpInstance.current = new CountUp(countUpRef.current, number, {
+				duration: 2.5,
+				separator: ",",
+				prefix,
+				suffix,
+			});
+
+			if (!countUpInstance.current.error) {
+				countUpInstance.current.start();
+			} else {
+				console.error(countUpInstance.current.error);
+			}
+		}
+
+		return () => {
+			if (countUpInstance.current) {
+				countUpInstance.current.reset();
+			}
+		};
+	}, [number, prefix, suffix]);
+
+	return (
+		<div
+			className={`bg-white rounded-lg shadow-lg p-10 transition-transform hover:scale-105 mb-3 ${className}`}
+		>
+			<Icon className="text-secondary text-5xl mb-4" />
+			<span
+				ref={countUpRef}
+				className="text-[#59886b] text-3xl lg:text-4xl font-bold"
+			></span>
+			<span className="block text-gray-600 mt-2">{label}</span>
+		</div>
+	);
+};
 
 const ImpactSection = () => {
-	// useEffect(() => {
-	// 	// This is where you'd typically initialize a counter animation library
-	// 	// For example, using a library like CountUp.js
-	// 	// countUpInit();
-	// }, []);
-
 	return (
 		<section className="bg-gray-100 py-20 overflow-hidden">
 			<div className="container mx-auto px-4">
 				<div className="flex flex-wrap justify-between">
-					<div className="w-full lg:w-5/12 mb-10 lg:mb-0" data-aos="fade-up">
+					<div className="w-full lg:w-5/12 mb-10 lg:mb-0" data-aos="fade-left">
 						<span className="inline-block text-sm md:text-base text-orange-500 font-semibold tracking-wide uppercase bg-[#da9a6d] bg-opacity-20 mb-3 py-2 px-2 sm:px-4 rounded-full">
 							Impact
 						</span>
@@ -61,7 +84,7 @@ const ImpactSection = () => {
 					<div
 						className="w-full lg:w-6/12"
 						data-aos="fade-up"
-						data-aos-delay="100"
+						data-aos-delay="300"
 					>
 						<div className="grid grid-cols-2 gap-6 transform">
 							<div className="space-y-6">

@@ -1,4 +1,5 @@
 import { Inter } from "next/font/google";
+import dynamic from "next/dynamic";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -7,7 +8,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
 	title: "Youth in Business",
-	description: "Welcome to Our Property Website",
+	description: "Welcome to Our Website",
 	icons: {
 		icon: [
 			{ url: "/favicon.ico" },
