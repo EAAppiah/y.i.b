@@ -54,39 +54,107 @@ const AboutUs = () => {
 			once: true,
 		});
 	}, []);
-	const [activeTab, setActiveTab] = useState("mission");
+	const [activeTab, setActiveTab] = useState("events");
 
 	const tabs = [
-		{ id: "mission", label: "Our Mission" },
-		{ id: "values", label: "Our Values" },
-		{ id: "history", label: "Our History" },
+		{ id: "events", label: "Events" },
+		{ id: "sessions", label: "Sessions" },
+		{ id: "networkingResource", label: "Networking" },
 	];
 
 	const tabContents = {
-		mission: {
-			title: "Our Mission",
+		events: {
+			title: "Events",
 			content:
-				"Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, eveniet voluptates eligendi maxime ad. Quas commodi distinctio modi, aspernatur, quos neque omnis magnam voluptatibus, sapiente fugiat cupiditate velit impedit praesentium. Reprehenderit hic illo, nulla autem odit molestiae molestias, dolores accusantium eos? Ut aspernatur fuga labore eius sequi nihil sit iusto, enim. Aliquam, cumque! Quaerat inventore illo dicta, exercitationem natus ducimus?",
+				"The variety of programs, conferences, trade shows, and competitions that will be later outlined intend to provide members with access to opportunities, guidance, resources, information, and mentors. These events will be graced with the presence of our handpicked array of seasoned professionals and corporate sponsors.",
 			buttonText: "Donate Now",
 			buttonLink: "#",
 			learnMoreLink: "#",
+			media: [
+				{
+					type: "image",
+					src: "/images/networking1.jpeg",
+					alt: "Events Image 1",
+				},
+				{
+					type: "img",
+					src: "/images/events2.jpeg",
+					alt: "Events Image 2",
+				},
+			],
 		},
-		values: {
-			title: "Our Values",
+		sessions: {
+			title: "One-on-One Sessions",
 			content:
-				"Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, eveniet voluptates eligendi maxime ad. Quas commodi distinctio modi, aspernatur, quos neque omnis magnam voluptatibus, sapiente fugiat cupiditate velit impedit praesentium. Reprehenderit hic illo, nulla autem odit molestiae molestias, dolores accusantium eos? Ut aspernatur fuga labore eius sequi nihil sit iusto, enim. Aliquam, cumque! Quaerat inventore illo dicta, exercitationem natus ducimus?",
+				"Whether on zoom or in person, our founder sits with community members whose ideas, existing businesses, current projects and behaviour stand out. These sessions seek to assist with planning out their ideas, predicting possible obstacles and redundancies to pre-purpose resource solutions, and enabling them to execute or improve on their projects and businesses.",
 			buttonText: "Be A Volunteer",
 			buttonLink: "#",
 			learnMoreLink: "#",
+			media: [
+				{
+					type: "image",
+					src: "/images/session2.jpeg",
+					alt: "Session Image 1",
+				},
+				{
+					type: "img",
+					src: "/images/session1.jpeg",
+					alt: "Session Image 2",
+				},
+			],
 		},
-		history: {
-			title: "Our History",
+		networkingResource: {
+			title: "Networking & Resource",
 			content:
-				"Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, eveniet voluptates eligendi maxime ad. Quas commodi distinctio modi, aspernatur, quos neque omnis magnam voluptatibus, sapiente fugiat cupiditate velit impedit praesentium. Reprehenderit hic illo, nulla autem odit molestiae molestias, dolores accusantium eos? Ut aspernatur fuga labore eius sequi nihil sit iusto, enim. Aliquam, cumque! Quaerat inventore illo dicta, exercitationem natus ducimus?",
+				"In addition to the founder-member consultancy, we aim to introduce community members to one another to connect idea developers with skilled members who have the prerequisite abilities to enable execution. Thereafter we will provide this team with the necessary professionals or corporations to bring such ideas to true fruition with the support, investment, guidance or employment they may provide.",
 			buttonText: "Be a Sponsor",
 			buttonLink: "#",
 			learnMoreLink: "#",
+			media: [
+				{
+					type: "image",
+					src: "/images/yib-group2.jpeg",
+					alt: "Networking Image 1",
+				},
+				{
+					type: "img",
+					src: "/images/events1.jpeg",
+					alt: "Networking Image 2",
+				},
+			],
 		},
+	};
+
+	const renderMedia = (media) => {
+		return (
+			<div className="space-y-4">
+				{media.map((item, index) => (
+					<div key={index} className="relative">
+						{item.type === "image" ? (
+							<Image
+								data-aos="fade-up"
+								data-aos-delay="300"
+								src={item.src}
+								alt={item.alt}
+								width={600}
+								height={400}
+								className="rounded-lg shadow-lg transition-transform duration-300 hover:scale-105"
+							/>
+						) : (
+							<Image
+								data-aos="fade-up"
+								data-aos-delay="500"
+								src={item.src}
+								alt={item.alt}
+								width={300}
+								height={200}
+								className="absolute -bottom-10 -right-10 rounded-lg shadow-lg transition-transform duration-300 hover:scale-105"
+							/>
+						)}
+					</div>
+				))}
+			</div>
+		);
 	};
 
 	return (
@@ -101,9 +169,10 @@ const AboutUs = () => {
 							About Us
 						</h2>
 						<p className="text-gray-600 text-base lg:text-lg">
-							Dedicated to making a difference, we work tirelessly to address
-							global challenges and create positive change in communities around
-							the world.
+							Our community organisation aims to create a conducive environment
+							for young people to engage in training, gain inspiration, and be
+							provided with the tools necessary for idea development with the
+							goal of producing youth-in businesses and projects.
 						</p>
 					</div>
 					<div className="lg:w-6/12" data-aos="fade-up" data-aos-delay="100">
@@ -140,24 +209,7 @@ const AboutUs = () => {
 					</div>
 					<div className="lg:w-6/12">
 						<div className="relative">
-							<Image
-								data-aos="fade-up"
-								data-aos-delay="300"
-								src="/images/second.jpeg"
-								alt="Our work in action"
-								width={600}
-								height={400}
-								className="rounded-lg shadow-lg transition-transform duration-300 hover:scale-105"
-							/>
-							<Image
-								data-aos="fade-up"
-								data-aos-delay="500"
-								src="/images/third.jpeg"
-								alt="Making a difference"
-								width={300}
-								height={200}
-								className="absolute -bottom-10 -right-10 rounded-lg shadow-lg transition-transform duration-300 hover:scale-105"
-							/>
+							{renderMedia(tabContents[activeTab].media)}
 						</div>
 					</div>
 				</div>

@@ -4,13 +4,13 @@ const VisionMission = () => {
 		{
 			title: "Our Vision",
 			description:
-				"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum minima dignissimos hic mollitia eius et quam ducimus maiores eos magni.",
+				"We envision a youth-focused economy wherein youth from all walks of life have access to this organization and the information, tools, and network necessary to create opportunities for themselves.",
 			delay: 0,
 		},
 		{
 			title: "Our Mission",
 			description:
-				"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum minima dignissimos hic mollitia eius et quam ducimus maiores eos magni.",
+				"Our mission is to build a community of like-minded young, innovative, intellectuals, entrepreneurs, and creatives. We aim to create a conducive environment for prodigious ideas to erupt and develop into youth-induced, youth-inclusive, and youth-interdependent businesses and projects.",
 			delay: 100,
 		},
 	];

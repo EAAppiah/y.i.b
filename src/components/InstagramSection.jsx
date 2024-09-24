@@ -9,13 +9,13 @@ import "swiper/css/free-mode";
 
 const InstagramSection = () => {
 	const instagramImages = [
-		"/images/first.jpeg",
-		"/images/second.jpeg",
-		"/images/third.jpeg",
-		"/images/fourth.jpeg",
-		"/images/boy.jpg",
-		"/images/second.jpeg",
-		"/images/fourth.jpeg",
+		"/images/insta/first.jpeg",
+		"/images/insta/second.jpeg",
+		"/images/insta/third.jpeg",
+		"/images/insta/fourth.jpeg",
+		"/images/insta/fifth.jpeg",
+		"/images/insta/sixth.jpeg",
+		"/images/insta/seventh.jpeg",
 	];
 
 	return (
@@ -72,7 +72,8 @@ const InstagramSection = () => {
 					{instagramImages.map((img, index) => (
 						<SwiperSlide key={index} className="aspect-square">
 							<a
-								href="#"
+								target="_blank"
+								href="https://www.instagram.com/yibcommunity/"
 								className="block w-full h-full relative overflow-hidden group"
 								aria-label={`View Instagram post ${index + 1}`}
 							>

@@ -24,7 +24,7 @@ const Hero = () => {
 					objectFit="cover"
 					quality={100}
 					priority
-					className="opacity-50"
+					className="opacity-80"
 				/>
 			</div>
 
@@ -38,7 +38,7 @@ const Hero = () => {
 							Make a Difference
 						</span>
 						<h1
-							className="text-4xl md:text-5xl lg:text-6xl font-bold text-white my-4 tracking-tight leading-tight"
+							className="text-4xl md:text-5xl lg:text-6xl font-bold text-white my-4 tracking-tight leading-tight text-shadow-lg"
 							data-aos="fade-right"
 							data-aos-delay="100"
 						>
@@ -47,10 +47,10 @@ const Hero = () => {
 						<p
 							data-aos="fade-right"
 							data-aos-delay="200"
-							className="my-6 text-gray-300 text-lg md:text-xl max-w-xl mx-auto lg:mx-0"
+							className="my-6 text-gray-100 text-lg md:text-xl max-w-xl mx-auto lg:mx-0 text-shadow"
 						>
-							Join our mission to create positive change. Your support can
-							transform lives and build stronger communities.
+							A psychosocial community organisation aiming to create a conducive
+							environment for young people to engage in.
 						</p>
 						<div
 							data-aos="fade-right"

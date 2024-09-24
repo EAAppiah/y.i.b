@@ -52,7 +52,7 @@ const FeaturedCauses = () => {
 
 	const causes = [
 		{
-			image: "/images/first.jpeg",
+			image: "/images/food.jpeg",
 			title: "Food for the Hungry",
 			description:
 				"Support our mission to provide nutritious meals to those in need and combat hunger in vulnerable communities.",
@@ -61,7 +61,7 @@ const FeaturedCauses = () => {
 			goal: 10000,
 		},
 		{
-			image: "/images/second.jpeg",
+			image: "/images/education.jpeg",
 			title: "Education for Children",
 			description:
 				"Help us empower children through education, providing resources and support for a brighter future.",
@@ -70,7 +70,7 @@ const FeaturedCauses = () => {
 			goal: 10000,
 		},
 		{
-			image: "/images/third.jpeg",
+			image: "/images/support.jpeg",
 			title: "Support Livelihood",
 			description:
 				"Join our efforts to create sustainable livelihoods and economic opportunities in under-served communities.",
@@ -79,31 +79,13 @@ const FeaturedCauses = () => {
 			goal: 25000,
 		},
 		{
-			image: "/images/second.jpeg",
-			title: "Clean Water Initiative",
-			description:
-				"Help us provide clean and safe drinking water to communities facing water scarcity and related health issues.",
-			progress: 42,
-			raised: 3150,
-			goal: 7500,
-		},
-		{
-			image: "/images/first.jpeg",
+			image: "/images/help.jpeg",
 			title: "Healthcare for All",
 			description:
 				"Support our mission to bring quality healthcare services to under-served and remote communities.",
 			progress: 55,
 			raised: 11000,
 			goal: 20000,
-		},
-		{
-			image: "/images/fourth.jpeg",
-			title: "Environmental Conservation",
-			description:
-				"Join our efforts to protect and preserve natural habitats and promote sustainable environmental practices.",
-			progress: 30,
-			raised: 1500,
-			goal: 5000,
 		},
 	];
 

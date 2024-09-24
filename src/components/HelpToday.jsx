@@ -1,9 +1,9 @@
 import React from "react";
 import Image from "next/image";
 import {
-	FaBottleWater,
+	FaBrain,
 	FaUserGraduate,
-	FaCircleDollarToSlot,
+	FaLightbulb,
 	FaSuitcaseMedical,
 } from "react-icons/fa6";
 
@@ -33,40 +33,41 @@ const FlipCard = ({ icon: Icon, title, description, delay }) => (
 const HelpToday = () => {
 	const cards = [
 		{
-			icon: FaBottleWater,
-			title: "Pure Water",
-			delay: 100,
-			description: "Provide clean, safe drinking water to communities in need.",
-		},
-		{
 			icon: FaUserGraduate,
-			title: "Give Education",
+			title: "Give Training",
 			delay: 200,
 			description:
-				"Support education initiatives for underprivileged children.",
+				"Empower individuals through skill-building workshops and educational programs.",
 		},
 		{
-			icon: FaCircleDollarToSlot,
-			title: "Give Donation",
+			icon: FaLightbulb,
+			title: "Gain Inspiration",
 			delay: 300,
 			description:
-				"Contribute financially to support various humanitarian causes.",
+				"Discover uplifting stories of impact and be motivated to make a difference.",
 		},
 		{
 			icon: FaSuitcaseMedical,
 			title: "Medical Mission",
 			delay: 400,
 			description:
-				"Participate in medical outreach programs to underserved areas.",
+				"Join our teams providing essential healthcare services in under-served regions.",
+		},
+		{
+			icon: FaBrain,
+			title: "Idea Development",
+			delay: 100,
+			description:
+				"Collaborate on innovative solutions to pressing community challenges.",
 		},
 	];
 
 	return (
 		<section
 			className="relative py-20 bg-cover bg-center overflow-hidden"
-			style={{ backgroundImage: "url('/images/first.jpeg')" }}
+			style={{ backgroundImage: "url('/images/yib-group2.jpeg')" }}
 		>
-			<div className="absolute inset-0 bg-[#59886B] opacity-80"></div>
+			<div className="absolute inset-0 bg-[#59886B] opacity-20"></div>
 			<div className="container mx-auto px-4 relative z-10">
 				<div className="text-center mb-12" data-aos="fade-up">
 					<span className="inline-block text-white text-xs md:text-sm font-semibold tracking-wide uppercase bg-[#FC6B00] bg-opacity-20 mb-3 py-2 px-4 rounded-full">
