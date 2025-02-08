@@ -90,7 +90,7 @@ const FeaturedCauses = () => {
 	];
 
 	return (
-		<section className="bg-gray-100 py-8 sm:py-12 md:py-16">
+		<section id="services" className="bg-gray-100 py-8 sm:py-12 md:py-16">
 			<div className="container mx-auto px-4">
 				<div className="text-center mb-8 sm:mb-12">
 					<span className="inline-block text-xs sm:text-sm md:text-base text-orange-500 font-semibold tracking-wide uppercase bg-[#da9a6d] bg-opacity-20 mb-2 sm:mb-3 py-1 sm:py-2 px-2 sm:px-4 rounded-full">
