@@ -46,7 +46,6 @@ const Footer = () => {
                   key={social.name}
                   href={social.href}
                   className="bg-gray-800 p-2.5 rounded-lg text-gray-400 hover:bg-orange-500 hover:text-white transition-all duration-300"
-                  target="_blank"
                   rel="noopener noreferrer"
                 >
                   <span className="sr-only">{social.name}</span>
@@ -121,13 +120,13 @@ const Footer = () => {
             </p>
             <div className="flex gap-6 mt-4 md:mt-0">
               <Link
-                href="/privacy"
+                href="#"
                 className="text-gray-400 hover:text-orange-500 text-sm transition-colors duration-300"
               >
                 Privacy Policy
               </Link>
               <Link
-                href="/terms"
+                href="#"
                 className="text-gray-400 hover:text-orange-500 text-sm transition-colors duration-300"
               >
                 Terms of Service
