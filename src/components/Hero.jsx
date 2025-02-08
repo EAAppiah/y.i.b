@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from 'react';
-import DonationForm from '@/components/DonationForm';
+import DonationForm from './DonationForm';
 
 const Hero = () => {
   const [isFormVisible, setIsFormVisible] = useState(false);
