@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { FaPhoneVolume, FaBars, FaTimes } from "react-icons/fa";
+import { FaPhoneVolume, FaBars, FaTimes } from "react-icons/fa6";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
