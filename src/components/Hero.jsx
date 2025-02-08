@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import DonationForm from './DonationForm';
 
 const Hero = () => {
-  const [isFormVisible, setIsFormVisible] = useState(true);
+  const [isFormVisible, setIsFormVisible] = useState(false);
 
   return (
     <section className="relative min-h-screen overflow-hidden bg-gradient-to-br from-blue-900 to-purple-900 py-16 md:py-20">
