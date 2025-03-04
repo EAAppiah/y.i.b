@@ -98,18 +98,18 @@ const ImpactSection = () => {
               </h2>
               <div className="prose prose-lg text-gray-600 max-w-none space-y-4">
                 <p>
-                  A psychosocial community organisation creating a conducive environment for
-                  young people to engage in training, gain inspiration, and access tools
-                  for idea development.
+                A psychosocial community organisation that has created a conducive 
+environment for young people to engage in training, gain inspiration, and 
+access tools for idea development.
                 </p>
                 <p>
-                  Founded by Mr. Damon Osei, we address the prejudice and lack of support
-                  facing young entrepreneurs. Our mission combats cultural biases and educational
-                  gaps that lead to concerning trends in youth activities.
+                Founded by Mr. Damon Osei, we address the prejudice and lack of support 
+facing young changemakers. Our mission combats cultural biases and 
+educational gaps that have led to concerning trends in youth activities.
                 </p>
                 <p>
-                  Through mentorship, resources, and community support, we're building a
-                  future where youth-led businesses and projects thrive.
+                Through mentorship, resources, and community support, we’re building a 
+                future where youth-led businesses and projects thrive.
                 </p>
               </div>
             </div>
@@ -120,31 +120,31 @@ const ImpactSection = () => {
             <div className="grid grid-cols-2 gap-6">
               <CounterItem
                 Icon={MdOutlineCampaign}
-                number={589}
-                label="New Initiatives"
+                number={500}
+                label="Job Opportunities Shared"
+                suffix="+"
                 delay={200}
                 className="transform hover:rotate-2"
               />
               <CounterItem
                 Icon={MdAttachMoney}
-                number={920}
+                number={50000}
                 label="Funds Raised"
                 prefix="$"
-                suffix="M"
                 delay={400}
                 className="transform hover:-rotate-2"
               />
               <CounterItem
                 Icon={MdGroups}
-                number={4211}
+                number={300}
                 label="Community Members"
                 delay={600}
                 className="transform hover:rotate-2"
               />
               <CounterItem
                 Icon={MdOutlineVolunteerActivism}
-                number={389}
-                label="Active Volunteers"
+                number={3000}
+                label="Young Lives Touched"
                 delay={800}
                 className="transform hover:-rotate-2"
               />

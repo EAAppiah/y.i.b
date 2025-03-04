@@ -17,12 +17,12 @@ const FlipCard = ({ icon: Icon, title, description, delay }) => (
 			<div className="relative h-full w-full rounded-xl shadow-xl transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
 				<div className="absolute inset-0 flex flex-col items-center justify-center rounded-xl bg-white">
 					<Icon className="text-4xl text-[#FC6B00] mb-4" />
-					<h3 className="text-2xl font-bold text-primary">{title}</h3>
+					<h3 className="text-2xl text-center font-bold text-primary">{title}</h3>
 				</div>
 				<div className="absolute inset-0 h-full w-full rounded-xl bg-white px-8 text-center [transform:rotateY(180deg)] [backface-visibility:hidden]">
 					<div className="flex min-h-full flex-col items-center justify-center">
 						<h3 className="text-primary text-2xl font-bold mb-2">{title}</h3>
-						<p className="text-md xl:text-lg">{description}</p>
+						<p className="text-md xl:text-sm">{description}</p>
 					</div>
 				</div>
 			</div>
@@ -34,31 +34,31 @@ const HelpToday = () => {
 	const cards = [
 		{
 			icon: FaUserGraduate,
-			title: "Give Training",
+			title: "Train & Inspire",
 			delay: 200,
 			description:
-				"Empower individuals through skill-building workshops and educational programs.",
+				"Volunteer to empower individuals through skill-building workshops and educational programs while sharing uplifting stories of impact that motivate and drive change.",
 		},
 		{
 			icon: FaLightbulb,
-			title: "Gain Inspiration",
+			title: "Education Meets Technology",
 			delay: 300,
 			description:
-				"Discover uplifting stories of impact and be motivated to make a difference.",
+				"Join us as we leverage innovative technology to enhance learning experiences, equipping individuals with the knowledge and digital skills needed to thrive in a modern world.",
 		},
 		{
 			icon: FaSuitcaseMedical,
 			title: "Medical Mission",
 			delay: 400,
 			description:
-				"Join our teams providing essential healthcare services in under-served regions.",
+				"Support our teams in delivering essential healthcare services, resources, and education to under-served communities, making a lasting impact on lives through medical outreach and care.",
 		},
 		{
 			icon: FaBrain,
-			title: "Idea Development",
+			title: " Business & Project Development",
 			delay: 100,
 			description:
-				"Collaborate on innovative solutions to pressing community challenges.",
+				"Work together to develop innovative businesses and projects that address pressing community challenges, creating sustainable solutions for growth and impact.",
 		},
 	];
 
@@ -70,7 +70,7 @@ const HelpToday = () => {
 			<div className="absolute inset-0 bg-[#59886B] opacity-20"></div>
 			<div className="container mx-auto px-4 relative z-10">
 				<div className="text-center mb-12" data-aos="fade-up">
-					<span className="inline-block text-white text-xs md:text-sm font-semibold tracking-wide uppercase bg-[#FC6B00] bg-opacity-20 mb-3 py-2 px-4 rounded-full">
+					<span className="inline-block text-white text-xs md:text-sm font-semibold tracking-wide uppercase bg-[#FC6B00] bg-opacity-45 mb-3 py-2 px-4 rounded-full">
 						Help Now
 					</span>
 					<h2 className="text-4xl md:text-6xl font-bold text-white">

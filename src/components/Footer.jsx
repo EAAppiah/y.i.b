@@ -15,8 +15,8 @@ const Footer = () => {
   
   const footerLinks = [
     { name: "About us", href: "/about" },
-    { name: "Services", href: "/services" },
-    { name: "News", href: "/news" },
+    { name: "Cause", href: "/services" },
+    { name: "Community", href: "/news" },
   ];
 
   const socialLinks = [

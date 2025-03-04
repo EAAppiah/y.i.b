@@ -12,7 +12,7 @@ const VisionMission = () => {
     {
       title: "Our Mission",
       description:
-        "Our mission is to build a community of like-minded young, innovative, intellectuals, entrepreneurs, and creatives. aim to create a conducive environment for prodigious ideas to erupt and develop into youth-induced, youth-inclusive, and youth-interdependent businesses and projects.",
+        "Our mission is to build a community of like-minded young, innovative, intellectuals, entrepreneurs, and creatives. We aim to create a conducive environment for prodigious ideas to erupt and develop into youth-induced, youth-inclusive, and youth-interdependent businesses and projects.",
       delay: 100,
     },
   ];

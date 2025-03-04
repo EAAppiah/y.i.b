@@ -4,21 +4,31 @@ import Image from "next/image";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-const TabContent = ({
-  title,
-  content,
-  buttonText,
-  buttonLink,
-}) => {
+const TabContent = ({ title, content, buttonText, buttonLink }) => {
   const scrollToAbout = () => {
-    const aboutSection = document.getElementById('about');
-    const navbar = document.querySelector('nav');
+    const aboutSection = document.getElementById("about");
+    const navbar = document.querySelector("nav");
     if (aboutSection) {
       const navbarHeight = navbar ? navbar.offsetHeight : 0;
-      const aboutPosition = aboutSection.getBoundingClientRect().top + window.pageYOffset;
+      const aboutPosition =
+        aboutSection.getBoundingClientRect().top + window.pageYOffset;
       window.scrollTo({
         top: aboutPosition - navbarHeight - 17,
-        behavior: 'smooth'
+        behavior: "smooth",
+      });
+    }
+  };
+
+  const scrollToCauses = () => {
+    const causesSection = document.getElementById("services");
+    const navbar = document.querySelector("nav");
+    if (causesSection) {
+      const navbarHeight = navbar ? navbar.offsetHeight : 0;
+      const causesPosition =
+        causesSection.getBoundingClientRect().top + window.pageYOffset;
+      window.scrollTo({
+        top: causesPosition - navbarHeight - 17,
+        behavior: "smooth",
       });
     }
   };
@@ -31,12 +41,12 @@ const TabContent = ({
       <p className="text-gray-600 text-base lg:text-lg">{content}</p>
       <div className="flex items-center space-x-6 py-4 lg:py-6">
         <button
-          href={buttonLink}
+          onClick={buttonText === "Donate Now" ? scrollToCauses : null}
           className="rounded-2xl bg-primary px-6 py-3 text-sm font-light tracking-wide uppercase text-white transition-colors hover:bg-[#59886b] focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
         >
           {buttonText}
         </button>
-        <button
+        {/* <button
           onClick={scrollToAbout}
           className="group flex items-center text-primary focus:outline-none"
         >
@@ -55,7 +65,7 @@ const TabContent = ({
               d="M9 5l7 7-7 7"
             />
           </svg>
-        </button>
+        </button> */}
       </div>
     </div>
   );
@@ -68,7 +78,7 @@ const AboutUs = () => {
       once: true,
     });
   }, []);
-  
+
   const [activeTab, setActiveTab] = useState("events");
 
   const tabs = [
@@ -81,7 +91,7 @@ const AboutUs = () => {
     events: {
       title: "Events",
       content:
-        "The variety of programs, conferences, trade shows, and competitions that will be later outlined intend to provide members with access to opportunities, guidance, resources, information, and mentors. These events will be graced with the presence of our handpicked array of seasoned professionals and corporate sponsors.",
+        "We offer a diverse range of programs, conferences, trade shows, and competitions that provide our members with access to opportunities, guidance, resources, information, and mentorship. These events feature seasoned professionals and corporate sponsors who enrich our community.",
       buttonText: "Donate Now",
       buttonLink: "#",
       media: [
@@ -100,9 +110,10 @@ const AboutUs = () => {
     sessions: {
       title: "One-on-One Sessions",
       content:
-        "Whether on zoom or in person, our founder sits with community members whose ideas, existing businesses, current projects and behaviour stand out. These sessions seek to assist with planning out their ideas, predicting possible obstacles and redundancies to pre-purpose resource solutions, and enabling them to execute or improve on their projects and businesses.",
+        "Through both virtual and in-person sessions, our founder and/or mentors actively engage with community members whose ideas, businesses, projects, and initiatives stand out. These sessions provide tailored guidance, helping members refine their plans, anticipate potential challenges, and proactively allocate resources for optimal execution and growth. Many have successfully launched and expanded their ventures through this structured mentorship.",
       buttonText: "Be A Volunteer",
-      buttonLink: "#",
+      buttonLink:
+        "https://docs.google.com/forms/d/e/1FAIpQLSdiTokiG23R4iGPTyz47riSJOcplsgXDRz0xYWkQXo9ZGAK9Q/viewform?usp=sharing",
       media: [
         {
           type: "image",
@@ -119,9 +130,10 @@ const AboutUs = () => {
     networkingResource: {
       title: "Networking & Resource",
       content:
-        "In addition to the founder-member consultancy, we aim to introduce community members to one another to connect idea developers with skilled members who have the prerequisite abilities to enable execution. Thereafter we will provide this team with the necessary professionals or corporations to bring such ideas to true fruition with the support, investment, guidance or employment they may provide.",
-      buttonText: "Be a Sponsor",
-      buttonLink: "#",
+        "Beyond one-on-one consultancy, we have built a thriving network where community members actively connect with skilled peers who can help bring their ideas to life. Our platform has successfully linked aspiring entrepreneurs with experienced professionals and corporations, facilitating collaborations that have led to business growth, investments, employment opportunities, and long-term success.",
+      buttonText: "Be A Regular Sponsor or Trainer Mentor",
+      buttonLink:
+        "https://docs.google.com/forms/d/e/1FAIpQLSdiTokiG23R4iGPTyz47riSJOcplsgXDRz0xYWkQXo9ZGAK9Q/viewform?usp=sharing",
       media: [
         {
           type: "image",
@@ -184,7 +196,8 @@ const AboutUs = () => {
               Our community organisation aims to create a conducive environment
               for young people to engage in training, gain inspiration, and be
               provided with the tools necessary for idea development with the
-              goal of producing youth-in businesses and projects.
+              goal of producing youth-in (youth-induced, youth-inclusive,
+              youth-interdependent) businesses and projects.
             </p>
           </div>
           <div className="lg:w-6/12" data-aos="fade-up" data-aos-delay="100">

@@ -277,9 +277,44 @@ const DonationForm = ({ isFormVisible, setIsFormVisible }) => {
   );
 };
 
+// Video Modal Component
+const VideoModal = ({ isOpen, onClose, videoUrl }) => {
+  if (!isOpen) return null;
+
+  return (
+    <div className="fixed inset-0 bg-black/70 z-50 flex items-center justify-center p-4">
+      <div className="relative w-full max-w-4xl mx-auto">
+        {/* Close button */}
+        <button 
+          onClick={onClose}
+          className="absolute -top-10 right-0 text-white hover:text-orange-300 transition-colors"
+          aria-label="Close video"
+        >
+          <FaTimes className="w-6 h-6" />
+        </button>
+        
+        {/* Video container with responsive aspect ratio */}
+        <div className="relative pb-[56.25%] h-0 bg-black rounded-lg overflow-hidden">
+          <iframe
+            src={`${videoUrl}?autoplay=1`}
+            title="Our Story Video"
+            className="absolute top-0 left-0 w-full h-full"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowFullScreen
+          ></iframe>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 // Hero Component
 const Hero = () => {
-  const [isFormVisible, setIsFormVisible] = useState(false);
+  const [isFormVisible, setIsFormVisible] = useState(true);
+  const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
+  
+  // YouTube video URL
+  const youtubeUrl = "https://www.youtube.com/embed/rwmpsS2Nu-4";
 
   return (
     <section className="relative min-h-screen overflow-hidden bg-gradient-to-br from-blue-900 to-purple-900 py-16 md:py-20">
@@ -328,7 +363,10 @@ const Hero = () => {
                 Donate Now
               </button>
               
-              <button className="inline-flex items-center justify-center px-8 py-4 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-full transition-all duration-300">
+              <button 
+                onClick={() => setIsVideoModalOpen(true)}
+                className="inline-flex items-center justify-center px-8 py-4 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-full transition-all duration-300 hover:-translate-y-1"
+              >
                 <span className="mr-2">▶️</span>
                 Watch Our Story
               </button>
@@ -346,6 +384,13 @@ const Hero = () => {
           </div>
         </div>
       </div>
+      
+      {/* Video Modal */}
+      <VideoModal 
+        isOpen={isVideoModalOpen} 
+        onClose={() => setIsVideoModalOpen(false)} 
+        videoUrl={youtubeUrl}
+      />
     </section>
   );
 };

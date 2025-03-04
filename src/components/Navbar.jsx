@@ -42,8 +42,8 @@ const Navbar = () => {
   const navItems = [
     { name: "Home", path: "/" },
     { name: "About", path: "#about", isScroll: true, sectionId: "about" },
-    { name: "Services", path: "#services", isScroll: true, sectionId: "services" },
-    { name: "News", path: "#instagram", isScroll: true, sectionId: "instagram" },
+    { name: "Causes", path: "#services", isScroll: true, sectionId: "services" },
+    { name: "Community", path: "#instagram", isScroll: true, sectionId: "instagram" },
   ];
 
   const handleNavClick = (item, e) => {

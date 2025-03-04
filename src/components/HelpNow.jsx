@@ -2,6 +2,19 @@
 import Link from "next/link";
 
 const HelpNow = () => {
+	const scrollToCauses = () => {
+		const causesSection = document.getElementById('causes');
+		const navbar = document.querySelector('nav');
+		if (causesSection) {
+			const navbarHeight = navbar ? navbar.offsetHeight : 0;
+			const causesPosition = causesSection.getBoundingClientRect().top + window.pageYOffset;
+			window.scrollTo({
+				top: causesPosition - navbarHeight - 17,
+				behavior: 'smooth'
+			});
+		}
+	};
+
 	return (
 		<section
 			className="relative py-24 bg-cover bg-center overflow-hidden"
@@ -19,17 +32,25 @@ const HelpNow = () => {
 						data-aos="fade-up"
 						data-aos-delay="300"
 					>
-						Let's Help The Unfortunate People
+						Let’s Turn Today’s Youth Into Tomorrow’s Changemakers
 					</p>
 					<div
 						className="flex flex-col sm:flex-row justify-center gap-4"
 						data-aos="fade-up"
 						data-aos-delay="500"
 					>
-						<button className="cursor-pointer outline outline-offset-2 outline-1 outline-white hover:text-black hover:bg-white text-white uppercase font-semibold py-3 px-6 rounded-full transition duration-300 text-center">
+						<Link 
+							href="https://docs.google.com/forms/d/e/1FAIpQLSdiTokiG23R4iGPTyz47riSJOcplsgXDRz0xYWkQXo9ZGAK9Q/viewform?usp=sharing"
+							target="_blank" 
+							rel="noopener noreferrer"
+							className="cursor-pointer outline outline-offset-2 outline-1 outline-white hover:text-white hover:bg-primary text-white uppercase font-semibold py-3 px-6 rounded-full transition duration-300 text-center"
+						>
 							Become a Volunteer
-						</button>
-						<button className="cursor-pointer uppercase bg-secondary text-white font-semibold py-3 px-6 rounded-full transition duration-300 text-center">
+						</Link>
+						<button 
+							onClick={scrollToCauses}
+							className="cursor-pointer uppercase bg-secondary text-white font-semibold py-3 px-6 rounded-full transition duration-300 text-center hover:bg-secondary/90"
+						>
 							Donate Now
 						</button>
 					</div>
