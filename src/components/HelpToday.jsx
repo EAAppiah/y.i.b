@@ -22,7 +22,7 @@ const FlipCard = ({ icon: Icon, title, description, delay }) => (
         <div className="absolute inset-0 h-full w-full rounded-xl bg-white px-4 md:px-8 text-center [transform:rotateY(180deg)] [backface-visibility:hidden]">
           <div className="flex min-h-full flex-col items-center justify-center py-4">
             <h3 className="text-primary text-xl md:text-2xl font-bold mb-2">{title}</h3>
-            <p className="md:text-lg">{description}</p>
+            <p className="text-sm md:text-md">{description}</p>
           </div>
         </div>
       </div>
