@@ -84,7 +84,7 @@ const FeaturedCauses = () => {
       goal: 3000,
     },
     {
-      image: "/images/education.jpeg",
+      image: "/images/YIBxHUGS.jpg",
       title: "YIB X HUGS FOUNDATION (Partnership)",
       description:
         "HUGS Foundation & Y.I.B partner to support Martey Tsuru School, providing funds, infrastructure, and artisans to restore classrooms and security. Inspired by Y.I.B, students launched a One Ghana Cedi a Day initiative for sustained impact.",
@@ -102,7 +102,7 @@ const FeaturedCauses = () => {
       goal: 5000,
     },
     {
-      image: "/images/help.jpeg",
+      image: "/images/YIB-samaritan.jpg",
       title: "YIB Partners The Samaritan Project",
       description:
         "The Samaritan Project, with support from Y.I.B's internally generated funds, and donations aims to combat COVID-19 hardships by raising money to support 100 families in La-Tseado with sanitizers, masks, and food packages. The initiative addressed economic inequalities exacerbated by the pandemic.",
@@ -111,7 +111,7 @@ const FeaturedCauses = () => {
       goal: 3500,
     },
     {
-      image: "/images/help.jpeg",
+      image: "/images/YMF-support.jpg",
       title: "YIB Supports YMF LAUNCH",
       description:
         " The YMF Foundation focuses on education, launching the YMF Scholarship Scheme in 2021 to support academically excellent but financially disadvantaged young girls in Ghana. Y.I.B assisted with branding, fundraising, and planning, and a commitment to being a incountry partner for soft skills training in perpetuity",
@@ -120,7 +120,7 @@ const FeaturedCauses = () => {
       goal: 10000,
     },
     {
-      image: "/images/help.jpeg",
+      image: "/images/hearts-avetime.jpg",
       title: "GMGH 2021 (YIB HEARTS AVEYIME)",
       description: "This year, YIB extends the GMGH Project to Aveyime, North Tongu, aiming to donate over 100 bags of essential supplies and money to the community—including food, clothing, and hygiene products—to support the community. Special thanks to Rev. Mawuli Okudzeto and Hon. Okudzeto-Ablakwa",
       progress: 50,
@@ -128,15 +128,15 @@ const FeaturedCauses = () => {
       goal: 2000,
     },
     {
-      image: "/images/help.jpeg",
-      title: "GMGH 2022 (Month Of Love Project",
+      image: "/images/month-of-love.jpg",
+      title: "GMGH 2022 (Month Of Love Project)",
       description: "In February, YIB's GMGH Foundation, alongside DNT Ghana, Purple Rain Decor, and YMF Ghana, aims to donate money for academic  materials & tools, school fees, and GMGH bags filled with essentials to  support orphanages in Prampram, continuing a legacy of care and  empowerment",
       progress: 60,
       raised: 3000,
       goal: 5000,
     },
     {
-      image: "/images/help.jpeg",
+      image: "/images/ignite-conference.jpg",
       title: "Ignite Conference 2022",
       description: "YIB's Ignite Conference 2022 will bring together 500+ young people to network and gain insights from industry leaders, including Her Excellency Anne Sophie Avé, Gillian Hammah, Andrew Achampong-Kyei, Yaw Sakyi, and Kofi Genfi, inspiring youth to take charge in business, innovation, and industry",
       progress: 76,
@@ -144,7 +144,7 @@ const FeaturedCauses = () => {
       goal: 10000,
     },
     {
-      image: "/images/help.jpeg",
+      image: "/images/revival.jpg",
       title: "GMGH CLOTHES DRIVE IN PARTNERSHIP WITH REVIVAL FEAST",
       description: "Y.I.B corporate social responsibility project partnered with Revival Feast to support homeless and displaced individuals. Through the Ghana Must Go Help Foundation, in collaboration with Anita Owusu Evangelistic Ministries, a free clothes stand was set up, providing over 200 attendees with donated clothing, shoes, bags, and financial support",
       progress: 100,
@@ -152,9 +152,9 @@ const FeaturedCauses = () => {
       goal: 1600,
     },
     {
-      image: "/images/help.jpeg",
-      title: "GMGH 2023 (A JOURNEY WORTH RUNNING)",
-      description: "After years of supporting Heart of The Father Orphanage, YIB returned to its second home for an unforgettable moment—a young boy, once a toddler in our care, now 10 years old, stood before us, sharing how YIB had shaped his life, a testament to the lasting impact of our mission",
+      image: "/images/YIBxYMF.jpg",
+      title: "YIB X YMF 2023 Empowering Futures",
+      description: "YIB and YMF spent a day with financially disadvantaged girls we sponsor, guiding them on their educational and career paths. We brought professionals from various fields to mentor them, providing insights and inspiration for their future careers. Through interactive sessions and personal guidance, the girls gained valuable knowledge and motivation to pursue their dreams. This collaboration reflects our commitment to empowering young women through education and mentorship.",
       progress: 100,
       raised: 4800,
       goal: 4800,
