@@ -4,9 +4,12 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { FaPhoneVolume, FaBars, FaTimes } from "react-icons/fa6";
+// Fix the imports by importing directly without barrel optimization
+import { FaPhoneVolume } from "react-icons/fa6";
+import { FaBars } from "react-icons/fa6";
+import { FaTimes } from "react-icons/fa";
 
-// Navbar Component (export this as separate file)
+// Navbar Component
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);

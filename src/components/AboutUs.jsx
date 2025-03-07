@@ -155,25 +155,32 @@ const AboutUs = () => {
         {media.map((item, index) => (
           <div key={index} className="relative">
             {item.type === "image" ? (
-              <Image
-                data-aos="fade-up"
-                data-aos-delay="300"
-                src={item.src}
-                alt={item.alt}
-                width={600}
-                height={400}
-                className="rounded-lg shadow-lg transition-transform duration-300 hover:scale-105"
-              />
+              <div className="relative h-auto w-full aspect-video">
+                <Image
+                  data-aos="fade-up"
+                  data-aos-delay="300"
+                  src={item.src}
+                  alt={item.alt}
+                  width={600}
+                  height={400}
+                  style={{ width: "100%", height: "auto" }}
+                  className="rounded-lg shadow-lg transition-transform duration-300 hover:scale-105 object-cover"
+                />
+              </div>
             ) : (
-              <Image
-                data-aos="fade-up"
-                data-aos-delay="500"
-                src={item.src}
-                alt={item.alt}
-                width={300}
-                height={200}
-                className="absolute -bottom-10 -right-10 rounded-lg shadow-lg transition-transform duration-300 hover:scale-105"
-              />
+              <div className="absolute -bottom-10 -right-10 w-[250px] h-auto">
+                <Image
+                  data-aos="fade-up"
+                  data-aos-delay="500"
+                  src={item.src}
+                  alt={item.alt}
+                  width={300}
+                  height={200}
+                  priority={true}
+                  style={{ width: "100%", height: "auto" }}
+                  className="rounded-lg shadow-lg transition-transform duration-300 hover:scale-105 object-cover"
+                />
+              </div>
             )}
           </div>
         ))}

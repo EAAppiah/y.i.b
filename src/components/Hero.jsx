@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FaTimes } from 'react-icons/fa';
 import emailjs from '@emailjs/browser';
 
@@ -18,6 +18,19 @@ const DonationForm = ({ isFormVisible, setIsFormVisible }) => {
   const [error, setError] = useState('');
   const [showBankDetails, setShowBankDetails] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
+
+  // Lock body scroll when form is visible
+  useEffect(() => {
+    if (isFormVisible) {
+      document.body.classList.add('modal-open');
+    } else {
+      document.body.classList.remove('modal-open');
+    }
+    
+    return () => {
+      document.body.classList.remove('modal-open');
+    };
+  }, [isFormVisible]);
 
   const donationAmounts = [10, 25, 50, 100];
 
@@ -117,7 +130,7 @@ const DonationForm = ({ isFormVisible, setIsFormVisible }) => {
 
   if (showSuccess) {
     return (
-      <div className="bg-white rounded-3xl shadow-2xl p-4 sm:p-6 md:p-8 text-center">
+      <div className="bg-white rounded-3xl shadow-2xl p-4 sm:p-6 md:p-8 text-center w-full max-w-md mx-auto">
         <div className="text-green-500 text-4xl sm:text-5xl md:text-6xl mb-4">✅</div>
         <h3 className="text-xl sm:text-2xl font-bold text-gray-800 mb-4">Thank You!</h3>
         <p className="text-sm sm:text-base text-gray-600">Your donation has been confirmed. We'll send you a confirmation email shortly.</p>
@@ -126,12 +139,12 @@ const DonationForm = ({ isFormVisible, setIsFormVisible }) => {
   }
 
   return (
-    <div className="bg-white rounded-3xl shadow-2xl p-4 sm:p-6 md:p-8 backdrop-blur-lg relative">
+    <div className="bg-white rounded-3xl shadow-2xl p-4 sm:p-6 md:p-8 backdrop-blur-lg relative w-full max-w-md mx-auto overflow-y-auto max-h-[calc(100vh-40px)]">
       <button
         type="button"
         onClick={() => setIsFormVisible(false)}
         className="absolute top-2 right-2 sm:top-4 sm:right-4 text-gray-500 hover:text-gray-700 
-                 transition-colors duration-300 hover:rotate-90 transform"
+                 transition-colors duration-300 hover:rotate-90 transform z-10"
         aria-label="Close donation form"
       >
         <FaTimes className="w-5 h-5" />
@@ -152,11 +165,11 @@ const DonationForm = ({ isFormVisible, setIsFormVisible }) => {
 
           <div className="space-y-3 sm:space-y-4 mb-4 sm:mb-6">
             {Object.entries(BankDetails).map(([key, value]) => (
-              <div key={key} className="flex justify-between items-center p-2 sm:p-3 bg-gray-50 rounded-lg">
+              <div key={key} className="flex flex-wrap justify-between items-center p-2 sm:p-3 bg-gray-50 rounded-lg">
                 <span className="text-xs sm:text-sm text-gray-600 capitalize">
                   {key.replace(/([A-Z])/g, ' $1').trim()}:
                 </span>
-                <span className="text-xs sm:text-sm font-medium">{value}</span>
+                <span className="text-xs sm:text-sm font-medium break-all">{value}</span>
               </div>
             ))}
           </div>
@@ -279,6 +292,19 @@ const DonationForm = ({ isFormVisible, setIsFormVisible }) => {
 
 // Video Modal Component
 const VideoModal = ({ isOpen, onClose, videoUrl }) => {
+  // Lock body scroll when modal is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.classList.add('modal-open');
+    } else {
+      document.body.classList.remove('modal-open');
+    }
+    
+    return () => {
+      document.body.classList.remove('modal-open');
+    };
+  }, [isOpen]);
+
   if (!isOpen) return null;
 
   return (
@@ -287,7 +313,7 @@ const VideoModal = ({ isOpen, onClose, videoUrl }) => {
         {/* Close button */}
         <button 
           onClick={onClose}
-          className="absolute -top-8 sm:-top-10 right-0 text-white hover:text-orange-300 transition-colors"
+          className="absolute -top-8 sm:-top-10 right-2 sm:right-0 text-white hover:text-orange-300 transition-colors z-10"
           aria-label="Close video"
         >
           <FaTimes className="w-5 h-5 sm:w-6 sm:h-6" />
@@ -317,7 +343,7 @@ const Hero = () => {
   const youtubeUrl = "https://www.youtube.com/embed/rwmpsS2Nu-4";
 
   return (
-    <section className="relative pt-16 md:pt-20 lg:pt-24 min-h-[90vh] overflow-hidden bg-gradient-to-br from-blue-900 to-purple-900 pb-10 sm:pb-12 md:pb-16 lg:pb-20">
+    <section className="relative w-full pt-16 md:pt-20 lg:pt-24 min-h-[90vh] overflow-x-hidden bg-gradient-to-br from-blue-900 to-purple-900 pb-10 sm:pb-12 md:pb-16 lg:pb-20">
       {/* Semi-transparent overlay */}
       <div className="absolute inset-0 bg-black/50 z-10" />
       
@@ -373,19 +399,17 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* Right Content - Donation Form */}
-          <div 
-            className={`
-              w-full lg:w-5/12 transition-all duration-500 mt-8 lg:mt-0
-              ${isFormVisible 
-                ? 'opacity-100 scale-100 fixed inset-0 z-50 p-4 sm:p-8 md:p-0 md:relative flex items-center justify-center lg:block bg-black/70 md:bg-transparent'
-                : 'opacity-0 scale-95 pointer-events-none hidden lg:block'}
-            `}
-          >
-            <DonationForm isFormVisible={isFormVisible} setIsFormVisible={setIsFormVisible} />
-          </div>
+          {/* Right Content - Just a placeholder on desktop */}
+          <div className="hidden lg:block lg:w-5/12"></div>
         </div>
       </div>
+      
+      {/* Donation Form Modal */}
+      {isFormVisible && (
+        <div className="fixed inset-0 z-50 bg-black/70 flex items-center justify-center p-4">
+          <DonationForm isFormVisible={isFormVisible} setIsFormVisible={setIsFormVisible} />
+        </div>
+      )}
       
       {/* Video Modal */}
       <VideoModal 

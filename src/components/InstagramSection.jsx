@@ -89,9 +89,9 @@ const InstagramSection = () => {
                 <Image
                   src={img}
                   alt={`Instagram Image ${index + 1}`}
-                  layout="fill"
-                  objectFit="cover"
-                  className="transition-transform duration-300 group-hover:scale-110"
+                  fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                  className="transition-transform duration-300 group-hover:scale-110 object-cover"
                   placeholder="blur"
                   blurDataURL="/placeholder.jpg"
                 />

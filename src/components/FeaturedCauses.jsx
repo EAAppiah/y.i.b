@@ -2,9 +2,8 @@
 import React, { useRef, useState } from "react";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Autoplay } from "swiper/modules";
+import { Autoplay } from "swiper/modules";
 import "swiper/css";
-import "swiper/css/navigation";
 import DonationModal from "./DonationModal";
 
 const CauseItem = ({
@@ -26,6 +25,7 @@ const CauseItem = ({
       alt={title}
       width={400}
       height={300}
+      priority={true}
       className="w-full h-48 sm:h-56 md:h-64 object-cover"
     />
     <div className="p-4 sm:p-6">
@@ -74,6 +74,18 @@ const FeaturedCauses = () => {
     setSelectedCause(null);
   };
 
+  const handlePrev = () => {
+    if (swiperRef.current && swiperRef.current.swiper) {
+      swiperRef.current.swiper.slidePrev();
+    }
+  };
+
+  const handleNext = () => {
+    if (swiperRef.current && swiperRef.current.swiper) {
+      swiperRef.current.swiper.slideNext();
+    }
+  };
+
   const causes = [
     {
       image: "/images/food.jpeg",
@@ -102,7 +114,7 @@ const FeaturedCauses = () => {
       goal: 5000,
     },
     {
-      image: "/images/YIB-samaritan.jpg",
+      image: "/images/YMF-support.jpg",
       title: "YIB Partners The Samaritan Project",
       description:
         "The Samaritan Project, with support from Y.I.B's internally generated funds, and donations aims to combat COVID-19 hardships by raising money to support 100 families in La-Tseado with sanitizers, masks, and food packages. The initiative addressed economic inequalities exacerbated by the pandemic.",
@@ -111,7 +123,7 @@ const FeaturedCauses = () => {
       goal: 3500,
     },
     {
-      image: "/images/YMF-support.jpg",
+      image: "/images/education.jpeg",
       title: "YIB Supports YMF LAUNCH",
       description:
         " The YMF Foundation focuses on education, launching the YMF Scholarship Scheme in 2021 to support academically excellent but financially disadvantaged young girls in Ghana. Y.I.B assisted with branding, fundraising, and planning, and a commitment to being a incountry partner for soft skills training in perpetuity",
@@ -179,7 +191,8 @@ const FeaturedCauses = () => {
           <div className="pt-6 flex justify-center space-x-2 sm:space-x-4">
             <button
               className="outline outline-offset-2 outline-1 outline-gray-300 hover:outline-offset-2 text-black uppercase px-2 sm:px-4 py-1 sm:py-2 rounded-full flex items-center hover:outline-black transition duration-300 text-xs sm:text-sm"
-              onClick={() => swiperRef.current?.slidePrev()}
+              onClick={handlePrev}
+              aria-label="Previous slide"
             >
               <svg
                 className="w-4 h-4 sm:w-5 sm:h-5 mr-1 sm:mr-2"
@@ -199,7 +212,8 @@ const FeaturedCauses = () => {
             </button>
             <button
               className="outline outline-offset-2 outline-1 outline-gray-300 hover:outline-offset-2 text-black uppercase px-2 sm:px-4 py-1 sm:py-2 rounded-full flex items-center hover:outline-black transition duration-300 text-xs sm:text-sm"
-              onClick={() => swiperRef.current?.slideNext()}
+              onClick={handleNext}
+              aria-label="Next slide"
             >
               <span>Next</span>
               <svg
@@ -221,30 +235,31 @@ const FeaturedCauses = () => {
         </div>
 
         <Swiper
-          modules={[Navigation, Autoplay]}
-          spaceBetween={20}
+          ref={swiperRef}
           slidesPerView={1}
+          spaceBetween={30}
+          centeredSlides={true}
+          loop={true}
           autoplay={{
-            delay: 4000,
-            disableOnInteraction: false,
-            pauseOnMouseEnter: true,
+            delay: 3000,
+            disableOnInteraction: false
           }}
+          modules={[Autoplay]}
           breakpoints={{
             640: {
+              slidesPerView: 1,
+              spaceBetween: 20
+            },
+            768: {
               slidesPerView: 2,
-              spaceBetween: 20,
+              spaceBetween: 30
             },
             1024: {
               slidesPerView: 3,
-              spaceBetween: 30,
-            },
+              spaceBetween: 40
+            }
           }}
-          onBeforeInit={(swiper) => {
-            swiperRef.current = swiper;
-          }}
-          slidesPerGroup={1}
-          loop={true}
-          loopFillGroupWithBlank={true}
+          className="mySwiper"
         >
           {causes.map((cause, index) => (
             <SwiperSlide key={index}>
