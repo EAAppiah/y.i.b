@@ -31,24 +31,24 @@ const VisionMission = () => {
   };
 
   return (
-    <section className="bg-gray-100 py-16">
+    <section className="bg-gray-100 py-12 sm:py-16">
       <div className="container mx-auto px-4">
-        <div className="flex flex-wrap -mx-4">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
           {content.map((item, index) => (
             <div
               key={index}
-              className="w-full lg:w-1/2 px-6 mb-8 lg:mb-0"
+              className="w-full"
               data-aos="fade-up"
               data-aos-delay={item.delay}
             >
-              <div className="bg-white p-8 rounded-lg shadow-md h-full border-t-8 border-[#ffc85c] hover:-translate-y-3 transition duration-300 ease-in-out">
-                <h2 className="text-3xl font-bold mb-4">{item.title}</h2>
-                <p className="mb-6 text-lg text-gray-600 leading-relaxed">
+              <div className="bg-white p-6 sm:p-8 rounded-lg shadow-md h-full border-t-8 border-[#ffc85c] hover:-translate-y-3 transition duration-300 ease-in-out">
+                <h2 className="text-2xl sm:text-3xl font-bold mb-4">{item.title}</h2>
+                <p className="mb-6 text-base sm:text-lg text-gray-600 leading-relaxed">
                   {item.description}
                 </p>
                 <button
                   onClick={scrollToAbout}
-                  className="text-lg inline-block py-2.5 text-[#59886b] transition-colors duration-300 border-b-2 border-[#59886b] hover:text-[#447559] hover:border-[#447559]"
+                  className="text-base sm:text-lg inline-block py-2.5 text-[#59886b] transition-colors duration-300 border-b-2 border-[#59886b] hover:text-[#447559] hover:border-[#447559]"
                 >
                   Learn More
                 </button>

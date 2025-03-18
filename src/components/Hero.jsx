@@ -5,7 +5,7 @@ import { FaTimes } from 'react-icons/fa';
 import emailjs from '@emailjs/browser';
 
 // DonationForm Component
-const DonationForm = ({ isFormVisible, setIsFormVisible }) => {
+const DonationForm = ({ isFormVisible, setIsFormVisible, isMobileView = false }) => {
   const [selectedAmount, setSelectedAmount] = useState(null);
   const [customAmount, setCustomAmount] = useState('');
   const [formData, setFormData] = useState({ 
@@ -18,6 +18,19 @@ const DonationForm = ({ isFormVisible, setIsFormVisible }) => {
   const [error, setError] = useState('');
   const [showBankDetails, setShowBankDetails] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
+
+  // Lock body scroll when form is visible on mobile
+  useEffect(() => {
+    if (isMobileView && isFormVisible) {
+      document.body.classList.add('modal-open');
+    } else {
+      document.body.classList.remove('modal-open');
+    }
+    
+    return () => {
+      document.body.classList.remove('modal-open');
+    };
+  }, [isFormVisible, isMobileView]);
 
   const donationAmounts = [10, 25, 50, 100];
 
@@ -99,6 +112,9 @@ const DonationForm = ({ isFormVisible, setIsFormVisible }) => {
 
       setShowSuccess(true);
       setTimeout(() => {
+        if (isMobileView) {
+          setIsFormVisible(false);
+        }
         setShowSuccess(false);
         setFormData({ fullName: '', email: '', phone: '', transactionReference: '' });
         setSelectedAmount(null);
@@ -114,9 +130,15 @@ const DonationForm = ({ isFormVisible, setIsFormVisible }) => {
     }
   };
 
+  const formClasses = `
+    bg-white rounded-3xl shadow-2xl p-4 sm:p-6 md:p-8 backdrop-blur-lg 
+    relative w-full max-w-md mx-auto overflow-y-auto max-h-[calc(100vh-40px)]
+    ${isMobileView ? 'z-50' : ''}
+  `;
+
   if (showSuccess) {
     return (
-      <div className="bg-white rounded-3xl shadow-2xl p-4 sm:p-6 md:p-8 text-center w-full max-w-md mx-auto">
+      <div className={formClasses}>
         <div className="text-green-500 text-4xl sm:text-5xl md:text-6xl mb-4">✅</div>
         <h3 className="text-xl sm:text-2xl font-bold text-gray-800 mb-4">Thank You!</h3>
         <p className="text-sm sm:text-base text-gray-600">Your donation has been confirmed. We'll send you a confirmation email shortly.</p>
@@ -125,7 +147,19 @@ const DonationForm = ({ isFormVisible, setIsFormVisible }) => {
   }
 
   return (
-    <div className="bg-white rounded-3xl shadow-2xl p-4 sm:p-6 md:p-8 backdrop-blur-lg relative w-full max-w-md mx-auto overflow-y-auto max-h-[calc(100vh-40px)]">
+    <div className={formClasses}>
+      {isMobileView && (
+        <button
+          type="button"
+          onClick={() => setIsFormVisible(false)}
+          className="absolute top-2 right-2 sm:top-4 sm:right-4 text-gray-500 hover:text-gray-700 
+                   transition-colors duration-300 hover:rotate-90 transform z-10"
+          aria-label="Close donation form"
+        >
+          <FaTimes className="w-5 h-5" />
+        </button>
+      )}
+
       {showBankDetails ? (
         <div>
           <h3 className="text-xl sm:text-2xl font-bold text-gray-800 mb-4 sm:mb-6 text-center">
@@ -312,6 +346,7 @@ const VideoModal = ({ isOpen, onClose, videoUrl }) => {
 
 // Hero Component
 const Hero = () => {
+  const [isFormVisible, setIsFormVisible] = useState(false);
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
   
   // YouTube video URL
@@ -349,7 +384,22 @@ const Hero = () => {
               where young people can thrive, grow, and build a better future together.
             </p>
             
-            <div className="flex justify-center lg:justify-start">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start">
+              {/* Show Donate button on mobile only */}
+              <button
+                onClick={() => setIsFormVisible(true)}
+                className={`
+                  lg:hidden inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 
+                  bg-orange-500 hover:bg-orange-600 text-white font-semibold 
+                  rounded-full transition-all duration-300 transform 
+                  hover:-translate-y-1 shadow-lg hover:shadow-orange-500/50
+                  text-sm sm:text-base
+                `}
+              >
+                <span className="mr-2">💰</span>
+                Donate Now
+              </button>
+              
               <button 
                 onClick={() => setIsVideoModalOpen(true)}
                 className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-full transition-all duration-300 hover:-translate-y-1 text-sm sm:text-base"
@@ -360,12 +410,27 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* Right Content - Donation Form displayed by default */}
-          <div className="lg:w-5/12">
-            <DonationForm isFormVisible={true} setIsFormVisible={() => {}} />
+          {/* Right Content - Donation Form visible only on desktop */}
+          <div className="hidden lg:block lg:w-5/12">
+            <DonationForm 
+              isFormVisible={true} 
+              setIsFormVisible={() => {}}
+              isMobileView={false}
+            />
           </div>
         </div>
       </div>
+      
+      {/* Mobile Donation Form Modal */}
+      {isFormVisible && (
+        <div className="fixed inset-0 z-50 bg-black/70 flex items-center justify-center p-4 lg:hidden">
+          <DonationForm 
+            isFormVisible={isFormVisible} 
+            setIsFormVisible={setIsFormVisible}
+            isMobileView={true}
+          />
+        </div>
+      )}
       
       {/* Video Modal */}
       <VideoModal 
