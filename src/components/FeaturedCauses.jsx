@@ -148,7 +148,7 @@ const FeaturedCauses = () => {
       goal: 5000,
     },
     {
-      image: "/images/ignite-conference.jpg",
+      image: "/images/revival.jpg",
       title: "Ignite Conference 2022",
       description: "YIB's Ignite Conference 2022 will bring together 500+ young people to network and gain insights from industry leaders, including Her Excellency Anne Sophie Avé, Gillian Hammah, Andrew Achampong-Kyei, Yaw Sakyi, and Kofi Genfi, inspiring youth to take charge in business, innovation, and industry",
       progress: 76,
@@ -156,7 +156,7 @@ const FeaturedCauses = () => {
       goal: 10000,
     },
     {
-      image: "/images/revival.jpg",
+      image: "/images/ignite-conference.jpg",
       title: "GMGH CLOTHES DRIVE IN PARTNERSHIP WITH REVIVAL FEAST",
       description: "Y.I.B corporate social responsibility project partnered with Revival Feast to support homeless and displaced individuals. Through the Ghana Must Go Help Foundation, in collaboration with Anita Owusu Evangelistic Ministries, a free clothes stand was set up, providing over 200 attendees with donated clothing, shoes, bags, and financial support",
       progress: 100,
